@@ -7,12 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		002C5A351B8ED52200D617B2 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002C5A341B8ED52200D617B2 /* JSONParser.swift */; };
+		006AF8651B8AC81E003B5432 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006AF8641B8AC81E003B5432 /* LoginViewController.swift */; };
+		006AF8681B8AFFBF003B5432 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006AF8671B8AFFBF003B5432 /* Constants.swift */; };
+		006B9F561B83D23400343F0F /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B9F551B83D23400343F0F /* AuthService.swift */; };
+		006D8D6B1B87A62D00B7FCC3 /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D8D6A1B87A62D00B7FCC3 /* KeyChainService.swift */; };
+		0090B8BA1B8DA26B00A827A4 /* Repos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0090B8B91B8DA26B00A827A4 /* Repos.swift */; };
+		0090B8BC1B8DA28300A827A4 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0090B8BB1B8DA28300A827A4 /* Users.swift */; };
 		00A5A5531B82734B00EE7461 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A5A5521B82734B00EE7461 /* AppDelegate.swift */; };
 		00A5A5551B82734B00EE7461 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A5A5541B82734B00EE7461 /* ViewController.swift */; };
 		00A5A5581B82734B00EE7461 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A5A5561B82734B00EE7461 /* Main.storyboard */; };
 		00A5A55A1B82734B00EE7461 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A5A5591B82734B00EE7461 /* Images.xcassets */; };
 		00A5A55D1B82734B00EE7461 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00A5A55B1B82734B00EE7461 /* LaunchScreen.xib */; };
 		00A5A5691B82734B00EE7461 /* GitbHubClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A5A5681B82734B00EE7461 /* GitbHubClientTests.swift */; };
+		00A5A5751B82797100EE7461 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A5A5741B82797100EE7461 /* MenuTableViewController.swift */; };
+		00A5A5771B8287B400EE7461 /* GitHubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A5A5761B8287B400EE7461 /* GitHubService.swift */; };
+		00A5A5791B828B0F00EE7461 /* RepoSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A5A5781B828B0F00EE7461 /* RepoSearchViewController.swift */; };
+		00C820E51B870F06004862A5 /* GitKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C820E41B870F06004862A5 /* GitKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		002C5A341B8ED52200D617B2 /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		006AF8641B8AC81E003B5432 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		006AF8671B8AFFBF003B5432 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		006B9F551B83D23400343F0F /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		006D8D6A1B87A62D00B7FCC3 /* KeyChainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyChainService.swift; sourceTree = "<group>"; };
+		0090B8B91B8DA26B00A827A4 /* Repos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repos.swift; sourceTree = "<group>"; };
+		0090B8BB1B8DA28300A827A4 /* Users.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		00A5A54D1B82734B00EE7461 /* GitbHubClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitbHubClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A5A5511B82734B00EE7461 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00A5A5521B82734B00EE7461 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +54,10 @@
 		00A5A5621B82734B00EE7461 /* GitbHubClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitbHubClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A5A5671B82734B00EE7461 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00A5A5681B82734B00EE7461 /* GitbHubClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitbHubClientTests.swift; sourceTree = "<group>"; };
+		00A5A5741B82797100EE7461 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		00A5A5761B8287B400EE7461 /* GitHubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubService.swift; sourceTree = "<group>"; };
+		00A5A5781B828B0F00EE7461 /* RepoSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoSearchViewController.swift; sourceTree = "<group>"; };
+		00C820E41B870F06004862A5 /* GitKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		006AF8661B8AFF99003B5432 /* App Constants */ = {
+			isa = PBXGroup;
+			children = (
+				006AF8671B8AFFBF003B5432 /* Constants.swift */,
+			);
+			name = "App Constants";
+			sourceTree = "<group>";
+		};
 		00A5A5441B82734B00EE7461 = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +107,13 @@
 		00A5A54F1B82734B00EE7461 /* GitbHubClient */ = {
 			isa = PBXGroup;
 			children = (
+				006AF8661B8AFF99003B5432 /* App Constants */,
+				00F05A5F1B866FCF00332F29 /* Model */,
+				00F05A601B866FE700332F29 /* View */,
+				00F05A611B866FF600332F29 /* Controller */,
+				00F05A621B86701D00332F29 /* Service */,
 				00A5A5521B82734B00EE7461 /* AppDelegate.swift */,
-				00A5A5541B82734B00EE7461 /* ViewController.swift */,
+				00C820E41B870F06004862A5 /* GitKey.swift */,
 				00A5A5561B82734B00EE7461 /* Main.storyboard */,
 				00A5A5591B82734B00EE7461 /* Images.xcassets */,
 				00A5A55B1B82734B00EE7461 /* LaunchScreen.xib */,
@@ -110,6 +145,44 @@
 				00A5A5671B82734B00EE7461 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		00F05A5F1B866FCF00332F29 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0090B8B91B8DA26B00A827A4 /* Repos.swift */,
+				0090B8BB1B8DA28300A827A4 /* Users.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		00F05A601B866FE700332F29 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		00F05A611B866FF600332F29 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				006AF8641B8AC81E003B5432 /* LoginViewController.swift */,
+				00A5A5741B82797100EE7461 /* MenuTableViewController.swift */,
+				00A5A5541B82734B00EE7461 /* ViewController.swift */,
+				00A5A5781B828B0F00EE7461 /* RepoSearchViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		00F05A621B86701D00332F29 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				006B9F551B83D23400343F0F /* AuthService.swift */,
+				00A5A5761B8287B400EE7461 /* GitHubService.swift */,
+				006D8D6A1B87A62D00B7FCC3 /* KeyChainService.swift */,
+				002C5A341B8ED52200D617B2 /* JSONParser.swift */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,8 +285,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0090B8BA1B8DA26B00A827A4 /* Repos.swift in Sources */,
+				006AF8651B8AC81E003B5432 /* LoginViewController.swift in Sources */,
+				00A5A5791B828B0F00EE7461 /* RepoSearchViewController.swift in Sources */,
 				00A5A5551B82734B00EE7461 /* ViewController.swift in Sources */,
+				002C5A351B8ED52200D617B2 /* JSONParser.swift in Sources */,
+				0090B8BC1B8DA28300A827A4 /* Users.swift in Sources */,
 				00A5A5531B82734B00EE7461 /* AppDelegate.swift in Sources */,
+				006B9F561B83D23400343F0F /* AuthService.swift in Sources */,
+				006AF8681B8AFFBF003B5432 /* Constants.swift in Sources */,
+				00C820E51B870F06004862A5 /* GitKey.swift in Sources */,
+				006D8D6B1B87A62D00B7FCC3 /* KeyChainService.swift in Sources */,
+				00A5A5771B8287B400EE7461 /* GitHubService.swift in Sources */,
+				00A5A5751B82797100EE7461 /* MenuTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +493,7 @@
 				00A5A56E1B82734B00EE7461 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00A5A56F1B82734B00EE7461 /* Build configuration list for PBXNativeTarget "GitbHubClientTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +502,7 @@
 				00A5A5711B82734B00EE7461 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

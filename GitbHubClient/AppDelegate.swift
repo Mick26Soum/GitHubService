@@ -15,7 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 	func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-		// Override point for customization after application launch.
+		// Check for existance gitAuthToken, reroute to loginViewController if it doesn't exist
+		if let gitToken = KeychainService.loadToken(){
+			
+		}else{
+		// Appdelegate doesn't have a storyboard property - requires instantiate
+			let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+			
+			if let loginVC = storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as? LoginViewController{
+				window = UIWindow(frame: UIScreen.mainScreen().bounds)
+				window?.makeKeyAndVisible()
+				window?.rootViewController = loginVC
+			}
+		}
+		return true
+	}
+	
+	func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+		// Function is triggered to catch the URL sent back to the application
+		AuthService.gitURLCodeExchange(url)
 		return true
 	}
 

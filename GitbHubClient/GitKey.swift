@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+let kClientID = "844cd1a25f4c781bd546"
+let kClientSecrect = "0ed0d491f8bf9a4011d36eab400502415bd911d0"
+
+
+
+

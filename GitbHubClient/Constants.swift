@@ -7,3 +7,6 @@
 //
 
 import Foundation
+
+// Constant for NSNotification Center
+let knewTokenSetID = "newTokenSetID"

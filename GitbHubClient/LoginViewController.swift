@@ -10,17 +10,31 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+// MARK:IBAction
+	@IBAction func loginButtonPressed(sender: AnyObject) {
+		// Should delete this button as users are redirected to GitHub for login
+	}
+	
+	override func viewDidLoad() {
+			super.viewDidLoad()
+		// Post Notification is actived in AuthService when new token is set
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "newSetToken", name: knewTokenSetID, object: nil)
+		
+	}
 
-        // Do any additional setup after loading the view.
-    }
+	override func viewDidAppear(animated: Bool) {
+			super.viewDidAppear(animated)
+		if let gitToken = KeychainService.loadToken(){
+			
+		}else{
+			AuthService.performInitialRequest()
+		}
+	}
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+	func newSetToken(){
+		performSegueWithIdentifier("showMenu", sender: nil)
+	}
+	
 
     /*
     // MARK: - Navigation
