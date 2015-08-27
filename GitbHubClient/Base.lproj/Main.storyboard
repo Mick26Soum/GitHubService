@@ -145,6 +145,7 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="p0q-At-yLB" id="5L1-Os-4Qn"/>
+                        <outlet property="tableView" destination="576-gr-2Vt" id="5u0-GR-acf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOh-J2-l4f" userLabel="First Responder" sceneMemberID="firstResponder"/>

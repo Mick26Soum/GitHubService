@@ -11,7 +11,6 @@ import Foundation
 class JSONParser {
 	
 	class func userJSONParser(jsonData : NSData) -> [User]? {
-		
 		if let rootObject = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: nil) as? [String : AnyObject],
 			items = rootObject["items"] as? [[String : AnyObject]] {
 				var users = [User]()
@@ -29,7 +28,6 @@ class JSONParser {
 	}
 	
 	class func repoJSONParser(jsonData : NSData) -> [Repository]? {
-		
 		if let rootObject = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: nil) as? [String : AnyObject],
 			items = rootObject["items"] as? [[String : AnyObject]] {
 				var repos = [Repository]()
