@@ -23,6 +23,7 @@ class GitbHubService{
 				NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
 					if let error = error{
 						println("error")
+						repoSearchCallBack(errorDescription: "No Data Is Available", repo: nil)
 					} else if let httpResponse = response as? NSHTTPURLResponse{
 						
 						switch httpResponse.statusCode{
@@ -36,7 +37,7 @@ class GitbHubService{
 						default:
 							println("default")
 						}
-						repoSearchCallBack(errorDescription: "No Data Is Available", repo: nil)
+						
 					}
 				}).resume()
 		  }

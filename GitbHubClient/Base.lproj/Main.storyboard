@@ -76,6 +76,9 @@
                                                 <constraint firstItem="5vj-Hr-anu" firstAttribute="leading" secondItem="5so-yb-Z9u" secondAttribute="trailing" constant="8" id="z8h-Yg-JL2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="FRx-PD-XcF" kind="show" identifier="showUser" id="91e-C2-lwF"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -109,6 +112,128 @@
             </objects>
             <point key="canvasLocation" x="1255" y="360"/>
         </scene>
+        <!--User Search View Controller-->
+        <scene sceneID="Ger-0m-VF5">
+            <objects>
+                <viewController id="FRx-PD-XcF" customClass="UserSearchViewController" customModule="GitbHubClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fTu-95-j5W"/>
+                        <viewControllerLayoutGuide type="bottom" id="eZk-6A-2Ui"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TbJ-0P-SFy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="skn-kd-Zcz">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OvR-9U-U2C">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OXr-gb-ASg">
+                                    <size key="itemSize" width="62" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="userCell" id="VZs-Q2-rwb" customClass="UserCollectionViewCell" customModule="GitbHubClient" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="60" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yl8-Tb-yhj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="68"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTG-EH-psH">
+                                                    <rect key="frame" x="0.0" y="68" width="60" height="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="12" id="lHG-Aw-59K"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="yl8-Tb-yhj" firstAttribute="leading" secondItem="VZs-Q2-rwb" secondAttribute="leading" id="Fwa-q9-h3V"/>
+                                            <constraint firstAttribute="trailing" secondItem="ZTG-EH-psH" secondAttribute="trailing" id="GPA-gq-qqr"/>
+                                            <constraint firstItem="ZTG-EH-psH" firstAttribute="leading" secondItem="VZs-Q2-rwb" secondAttribute="leading" id="IMA-Zh-2us"/>
+                                            <constraint firstAttribute="trailing" secondItem="yl8-Tb-yhj" secondAttribute="trailing" id="OSB-Z6-eQb"/>
+                                            <constraint firstItem="ZTG-EH-psH" firstAttribute="top" secondItem="yl8-Tb-yhj" secondAttribute="bottom" id="Phr-Ur-R2I"/>
+                                            <constraint firstItem="yl8-Tb-yhj" firstAttribute="top" secondItem="VZs-Q2-rwb" secondAttribute="top" id="rLV-95-7mX"/>
+                                            <constraint firstItem="ZTG-EH-psH" firstAttribute="top" secondItem="yl8-Tb-yhj" secondAttribute="bottom" id="xau-sh-xLI"/>
+                                            <constraint firstAttribute="bottom" secondItem="ZTG-EH-psH" secondAttribute="bottom" id="zBp-Xe-po4"/>
+                                        </constraints>
+                                        <size key="customSize" width="60" height="80"/>
+                                        <connections>
+                                            <outlet property="userImageView" destination="yl8-Tb-yhj" id="oYO-AI-Qnv"/>
+                                            <outlet property="userNameLabel" destination="ZTG-EH-psH" id="ChE-g2-F0K"/>
+                                            <segue destination="rDr-br-4rV" kind="show" identifier="showUserDetail" id="2rA-m9-6xi"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OvR-9U-U2C" firstAttribute="leading" secondItem="TbJ-0P-SFy" secondAttribute="leading" id="Aox-Of-RkK"/>
+                            <constraint firstItem="skn-kd-Zcz" firstAttribute="top" secondItem="fTu-95-j5W" secondAttribute="bottom" id="IJm-q2-CZp"/>
+                            <constraint firstItem="eZk-6A-2Ui" firstAttribute="top" secondItem="OvR-9U-U2C" secondAttribute="bottom" id="V9x-Yx-9SQ"/>
+                            <constraint firstItem="OvR-9U-U2C" firstAttribute="top" secondItem="skn-kd-Zcz" secondAttribute="bottom" id="eua-jQ-9Rx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="skn-kd-Zcz" secondAttribute="trailing" constant="-16" id="h6J-Ht-mtT"/>
+                            <constraint firstItem="skn-kd-Zcz" firstAttribute="leading" secondItem="TbJ-0P-SFy" secondAttribute="leadingMargin" constant="-16" id="mKR-6i-EqK"/>
+                            <constraint firstAttribute="trailing" secondItem="OvR-9U-U2C" secondAttribute="trailing" id="poG-57-x2S"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="skn-kd-Zcz" id="ila-lg-mUu"/>
+                        <outlet property="userCollectionView" destination="OvR-9U-U2C" id="1dr-43-peP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PGd-bF-bDl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1255" y="1030"/>
+        </scene>
+        <!--User Detail View Controller-->
+        <scene sceneID="AwW-PX-GNf">
+            <objects>
+                <viewController id="rDr-br-4rV" customClass="UserDetailViewController" customModule="GitbHubClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3LU-2n-Cqz"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ef6-TS-PZe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gCt-M8-AMY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Rme-2Z-213">
+                                <rect key="frame" x="250" y="72" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="SHA-8F-gkX"/>
+                                    <constraint firstAttribute="height" constant="100" id="mT8-gd-5lV"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Rme-2Z-213" secondAttribute="centerX" id="Lvn-tn-I0a"/>
+                            <constraint firstItem="Rme-2Z-213" firstAttribute="top" secondItem="3LU-2n-Cqz" secondAttribute="bottom" constant="8" id="rt9-H4-hJG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="userDetailImageView" destination="Rme-2Z-213" id="ztx-ss-rEd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V9C-5o-NWx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992" y="1038"/>
+        </scene>
         <!--Repo Search View Controller-->
         <scene sceneID="d8N-eh-bHE">
             <objects>
@@ -121,10 +246,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="576-gr-2Vt">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="576-gr-2Vt">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <searchBar key="tableFooterView" contentMode="redraw" placeholder="Search The Repo" scopeBarBackgroundImage="Swift" id="p0q-At-yLB">
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search The Repo" scopeBarBackgroundImage="Swift" id="p0q-At-yLB">
                                     <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -133,6 +258,41 @@
                                         <string>Objective - C</string>
                                     </scopeButtonTitles>
                                 </searchBar>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="repoCell" rowHeight="80" id="ffB-IO-NrA" customClass="RepoTableViewCell" customModule="GitbHubClient" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ffB-IO-NrA" id="9IB-R0-ppm">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xw3-0L-d7b">
+                                                    <rect key="frame" x="8" y="8" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="Frm-OO-sRq"/>
+                                                        <constraint firstAttribute="height" constant="60" id="f6e-rJ-p66"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyw-09-UpH">
+                                                    <rect key="frame" x="76" y="29" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Xw3-0L-d7b" firstAttribute="centerY" secondItem="oyw-09-UpH" secondAttribute="centerY" constant="-1.5" id="WW2-q8-g4i"/>
+                                                <constraint firstItem="Xw3-0L-d7b" firstAttribute="leading" secondItem="9IB-R0-ppm" secondAttribute="leading" constant="8" id="fd5-NQ-6P8"/>
+                                                <constraint firstItem="Xw3-0L-d7b" firstAttribute="top" secondItem="9IB-R0-ppm" secondAttribute="top" constant="8" id="sEf-iR-UHD"/>
+                                                <constraint firstItem="oyw-09-UpH" firstAttribute="leading" secondItem="Xw3-0L-d7b" secondAttribute="trailing" constant="8" id="ynW-l7-0wZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="repoImageView" destination="Xw3-0L-d7b" id="xDD-n6-43d"/>
+                                            <outlet property="repoURLLabel" destination="oyw-09-UpH" id="DGy-2g-npS"/>
+                                            <segue destination="L7V-cD-uWR" kind="show" identifier="showWeb" id="iTB-BC-DqF"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,6 +311,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOh-J2-l4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1971" y="360"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="fxS-Bm-ZXc">
+            <objects>
+                <viewController id="L7V-cD-uWR" customClass="WebViewController" customModule="GitbHubClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PKg-ZZ-4Qa"/>
+                        <viewControllerLayoutGuide type="bottom" id="iqd-V6-XNL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FZX-P7-fZf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7s-ac-ILH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2609" y="360"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="jbg-i1-ZHO">

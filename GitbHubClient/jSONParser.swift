@@ -36,9 +36,10 @@ class JSONParser {
 					let ownerDictionary = item["owner"] as? [String : AnyObject],
 					let owner = ownerDictionary["login"] as? String,
 					let url = ownerDictionary["url"] as? String,
-					let avatarURL = ownerDictionary["avatar_url"] as? String{
-						let repo = Repository(name: name, owner : owner, url : url, avatarUrl : avatarURL, image :nil)
-						repos.append(repo)
+					let avatarURL = ownerDictionary["avatar_url"] as? String,
+					let htmlURL = ownerDictionary["html_url"] as? String{
+					let repo = Repository(name: name, owner: owner, url: url, avatarUrl: avatarURL, htmlURL: htmlURL, image: nil)
+					repos.append(repo)
 					}
 				}
 				return repos

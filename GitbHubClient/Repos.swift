@@ -13,5 +13,8 @@ struct Repository {
 	let owner : String
 	let url : String
 	let avatarUrl : String
+	let htmlURL : String
 	var image : UIImage?
 }
+
+
