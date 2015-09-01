@@ -9,7 +9,7 @@
 import UIKit
 
 class UserSearchViewController: UIViewController {
-
+	
 	// MARK: - IBOutlet
 	@IBOutlet weak var searchBar: UISearchBar!
 	@IBOutlet weak var userCollectionView: UICollectionView!
@@ -17,13 +17,12 @@ class UserSearchViewController: UIViewController {
 	let imageQueue = NSOperationQueue()
 	var users = [User]()
 	
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        searchBar.delegate = self
-				userCollectionView.dataSource = self
-			
-    }
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		searchBar.delegate = self
+		userCollectionView.dataSource = self
+	}
+	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "showUserDetail"{
 			if let destinationVC = segue.destinationViewController as? UserDetailViewController,
@@ -72,15 +71,11 @@ extension UserSearchViewController : UICollectionViewDataSource{
 //		cell.hidden = false
 //		cell.alpha = 0
 		
-		
-		//userImageView
 		cell.tag++
 		let tag = cell.tag
 		
 		var user = users[indexPath.row]
-		
 		cell.userNameLabel.text = user.login
-		
 		
 		if let image = user.image{
 			cell.userImageView.image = image
@@ -93,10 +88,14 @@ extension UserSearchViewController : UICollectionViewDataSource{
 				}
 			})
 		}
-		
-		
 		return cell
 	}
-	
+}
+
+extension UserSearchViewController : UINavigationControllerDelegate {
+	func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+		return toVC is UserDetailViewController ? ToUserAnimationViewController() : nil
+		
+	}
 }
 
